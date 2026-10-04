@@ -1968,13 +1968,37 @@ input[type=range] {
   .nav-actions {
     display: none;
   }
+  .top-bar-content {
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    gap: 0.5rem;
+  }
   .hero-title {
-    font-size: 2.25rem;
+    font-size: 2rem;
+  }
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+  .hero-ctas .btn {
+    width: 100%;
+    justify-content: center;
+  }
+  .hero-highlights {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    text-align: center;
+  }
+  .highlight-item {
+    align-items: center;
   }
   .marketplace-split {
     grid-template-columns: 1fr;
   }
   .industries-grid {
+    grid-template-columns: 1fr;
+  }
+  .trust-grid {
     grid-template-columns: 1fr;
   }
   .calc-grid {
@@ -1993,9 +2017,35 @@ input[type=range] {
     grid-template-columns: 1fr;
   }
   .calculator-wrap {
-    padding: 1.75rem;
+    padding: 1.5rem;
+  }
+  .calc-estimate-price {
+    font-size: 2rem;
   }
   .footer-grid {
     grid-template-columns: 1fr;
+  }
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+  .section-title {
+    font-size: 1.8rem;
+  }
+  .cta-title {
+    font-size: 1.8rem;
+  }
+  .section {
+    padding: 3.5rem 0;
+  }
+  .hero-section {
+    padding: 3rem 0 4rem;
+  }
+  .modal-box {
+    padding: 1.5rem;
+  }
+  .guard-career-content {
+    padding: 1.5rem;
   }
 }
