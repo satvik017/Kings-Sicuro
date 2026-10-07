@@ -124,7 +124,7 @@ ul {
   background: var(--navy-dark);
   color: var(--text-white-dim);
   font-size: 0.82rem;
-  padding: 0.45rem 0;
+  padding: 0.55rem 0;
   border-bottom: 1px solid rgba(197, 155, 39, 0.15);
 }
 
@@ -223,13 +223,13 @@ ul {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.75rem 0;
+  padding: 1.15rem 0;
 }
 
 .nav-brand {
   display: flex;
   align-items: center;
-  gap: 0.85rem;
+  gap: 1rem;
 }
 
 .brand-logo-img {
@@ -283,7 +283,7 @@ ul {
   font-weight: 600;
   font-size: 0.9rem;
   color: var(--text-white-dim);
-  padding: 0.5rem 0.85rem;
+  padding: 0.6rem 0.95rem;
   border-radius: var(--radius-sm);
   position: relative;
   transition: all var(--transition-fast);
@@ -314,7 +314,11 @@ ul {
 .nav-actions {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
+  gap: 0.85rem;
+}
+
+.mobile-menu-actions {
+  display: none;
 }
 
 /* Refined Buttons */
@@ -1789,6 +1793,7 @@ input[type=range] {
   max-width: 600px;
   max-height: 90vh;
   overflow-y: auto;
+  overflow-x: hidden;
   padding: 2.2rem;
   position: relative;
   box-shadow: var(--shadow-xl);
@@ -1816,6 +1821,7 @@ input[type=range] {
   justify-content: center;
   font-size: 1.1rem;
   transition: background var(--transition-fast);
+  z-index: 5;
 }
 
 .modal-close-btn:hover {
@@ -1824,6 +1830,8 @@ input[type=range] {
 
 .modal-header {
   margin-bottom: 1.5rem;
+  padding-right: 2.75rem;
+  position: relative;
 }
 
 .modal-title {
@@ -1915,6 +1923,219 @@ input[type=range] {
 }
 
 /* ==========================================================================
+   CAREERS PAGE SPECIALIZED STYLING
+   ========================================================================== */
+.subhero-section {
+  padding: 4rem 0 4.5rem;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  text-align: center;
+}
+
+.subhero-ctas {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 1.5rem;
+}
+
+/* Guard Trust Strip under Hero */
+.guard-perks-strip {
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.perk-strip-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  background: rgba(14, 34, 61, 0.85);
+  border: 1px solid rgba(197, 155, 39, 0.35);
+  color: var(--gold-light);
+  font-size: 0.82rem;
+  font-weight: 600;
+  padding: 0.4rem 0.9rem;
+  border-radius: var(--radius-full);
+}
+
+/* Careers Open Vacancy Card Upgrades */
+.career-vacancy-card {
+  background: #FFFFFF;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-light);
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+  position: relative;
+  overflow: hidden;
+}
+
+.career-vacancy-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-xl);
+  border-color: rgba(197, 155, 39, 0.4);
+}
+
+.career-vacancy-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--gold-gradient);
+}
+
+.vacancy-header {
+  padding: 1.5rem 1.5rem 0.6rem;
+}
+
+.vacancy-badge {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--gold-dark);
+  margin-bottom: 0.35rem;
+}
+
+.vacancy-title {
+  font-family: var(--font-heading);
+  font-size: 1.28rem;
+  font-weight: 800;
+  color: var(--navy-medium);
+  line-height: 1.25;
+}
+
+.vacancy-body {
+  padding: 0.4rem 1.5rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.vacancy-salary-tag {
+  background: rgba(16, 185, 129, 0.1);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  color: #065F46;
+  border-radius: var(--radius-sm);
+  padding: 0.5rem 0.85rem;
+  font-size: 0.92rem;
+  font-weight: 700;
+  margin: 0.65rem 0 0.95rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.vacancy-desc {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  line-height: 1.55;
+  margin-bottom: 1rem;
+}
+
+/* Guard Perks Grid on Careers Page */
+.career-benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.benefit-card-box {
+  background: #FFFFFF;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  padding: 1.75rem 1.4rem;
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-base);
+  text-align: left;
+}
+
+.benefit-card-box:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+  border-color: rgba(197, 155, 39, 0.35);
+}
+
+.benefit-icon-wrap {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: rgba(197, 155, 39, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  margin-bottom: 1.1rem;
+}
+
+.benefit-card-title {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--navy-medium);
+  margin-bottom: 0.4rem;
+}
+
+.benefit-card-desc {
+  font-size: 0.86rem;
+  color: var(--text-secondary);
+  line-height: 1.55;
+}
+
+/* Responsive Careers Application Grid */
+.career-apply-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 2rem;
+  background: var(--navy-surface);
+  border-radius: var(--radius-xl);
+  padding: 2.5rem;
+  border: 1px solid rgba(197, 155, 39, 0.3);
+  box-shadow: var(--shadow-xl);
+}
+
+.walkin-box {
+  background: rgba(14, 34, 61, 0.8);
+  border: 1px solid rgba(197, 155, 39, 0.35);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.walkin-address-card {
+  background: rgba(6, 14, 24, 0.65);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-md);
+  padding: 1.25rem;
+  text-align: left;
+  font-size: 0.86rem;
+  color: var(--text-white-dim);
+  line-height: 1.6;
+  margin: 1.25rem 0;
+}
+
+.walkin-address-card strong {
+  color: var(--gold-light);
+  display: block;
+  font-size: 0.95rem;
+  margin-bottom: 0.35rem;
+}
+
+/* ==========================================================================
    RESPONSIVE DESIGN (MEDIA QUERIES)
    ========================================================================== */
 @media (max-width: 1024px) {
@@ -1943,109 +2164,609 @@ input[type=range] {
   .footer-grid {
     grid-template-columns: 1fr 1fr;
   }
+  .career-benefits-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .career-apply-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 2rem;
+  }
 }
 
 @media (max-width: 768px) {
-  .mobile-toggle {
-    display: block;
+  /* Careers Subpage Responsive Rules */
+  .subhero-section {
+    padding: 2.75rem 0 3.25rem;
   }
-  .nav-menu {
-    position: fixed;
-    top: 72px;
-    left: 0;
-    right: 0;
-    background: var(--navy-dark);
+  .subhero-ctas {
     flex-direction: column;
-    padding: 2rem;
-    gap: 1.25rem;
-    border-bottom: 1px solid var(--gold-primary);
-    transform: translateY(-150%);
-    transition: transform var(--transition-base);
+    gap: 0.65rem;
   }
-  .nav-menu.open {
-    transform: translateY(0);
+  .subhero-ctas .btn {
+    width: 100%;
+    justify-content: center;
+  }
+  .guard-perks-strip {
+    gap: 0.5rem;
+    margin-top: 1.4rem;
+    padding-top: 1.25rem;
+  }
+  .perk-strip-pill {
+    font-size: 0.76rem;
+    padding: 0.35rem 0.75rem;
+  }
+  .career-benefits-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  .benefit-card-box {
+    padding: 1.25rem 1rem;
+  }
+  .career-apply-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem;
+    padding: 1.35rem 1rem !important;
+    border-radius: var(--radius-lg);
+  }
+  .walkin-box {
+    padding: 1.35rem 1rem;
+  }
+  .walkin-address-card {
+    padding: 1rem;
+    font-size: 0.82rem;
+  }
+  .vacancy-header {
+    padding: 1.25rem 1rem 0.5rem;
+  }
+  .vacancy-body {
+    padding: 0.5rem 1rem 1.25rem;
+  }
+  .vacancy-salary-tag {
+    font-size: 0.85rem;
+    padding: 0.45rem 0.75rem;
+  }
+
+  /* Navigation Bar & Mobile Drawer */
+  .main-header {
+    position: sticky;
+    top: 0;
+  }
+  .navbar {
+    position: relative;
+    padding: 0.95rem 0;
+  }
+  .brand-logo-img {
+    width: 42px;
+    height: 42px;
+  }
+  .brand-name {
+    font-size: 1.15rem;
+  }
+  .brand-tagline {
+    font-size: 0.6rem;
+    letter-spacing: 0.8px;
+  }
+  .mobile-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: var(--radius-sm);
+    color: var(--gold-light);
+    background: rgba(197, 155, 39, 0.12);
+    border: 1px solid rgba(197, 155, 39, 0.3);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+  }
+  .mobile-toggle:hover, .mobile-toggle:active {
+    background: rgba(197, 155, 39, 0.25);
+    color: #FFFFFF;
   }
   .nav-actions {
     display: none;
   }
-  .top-bar-content {
-    justify-content: center;
+  .nav-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: rgba(11, 25, 44, 0.98);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 2px solid var(--gold-primary);
+    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.65);
     flex-direction: column;
+    padding: 1.2rem 1.25rem 1.5rem;
+    gap: 0.35rem;
+    max-height: calc(100vh - 75px);
+    overflow-y: auto;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-8px);
+    transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s;
+    pointer-events: none;
+    z-index: 999;
+  }
+  .nav-menu.open {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+  .nav-menu .nav-link {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    font-size: 0.92rem;
+    border-radius: var(--radius-sm);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    text-align: left;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: var(--text-white-dim);
+  }
+  .nav-menu .nav-link.active {
+    background: rgba(197, 155, 39, 0.15);
+    color: var(--gold-light);
+    border-left: 3px solid var(--gold-primary);
+    font-weight: 700;
+  }
+  .nav-menu .nav-link.active::after {
+    display: none;
+  }
+  .mobile-menu-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(197, 155, 39, 0.2);
+  }
+  .mobile-menu-actions .btn {
+    width: 100%;
+    justify-content: center;
+    font-size: 0.88rem;
+    padding: 0.7rem 1rem;
+  }
+
+  /* Top Announcement Bar */
+  .top-bar-content {
+    flex-direction: column;
+    gap: 0.35rem;
     text-align: center;
-    gap: 0.5rem;
+    justify-content: center;
+    padding: 0.25rem 0;
+  }
+  .top-bar-left {
+    flex-direction: column;
+    gap: 0.25rem;
+    align-items: center;
+  }
+  .top-bar-item {
+    font-size: 0.76rem;
+  }
+  .top-bar-wa-link {
+    font-size: 0.76rem;
+  }
+
+  /* Hero Section */
+  .hero-section {
+    padding: 2.75rem 0 3.5rem;
   }
   .hero-title {
-    font-size: 2rem;
+    font-size: 1.85rem !important;
+    line-height: 1.25;
   }
   .hero-subtitle {
-    font-size: 1rem;
+    font-size: 0.95rem;
+    margin-bottom: 1.75rem;
+  }
+  .hero-ctas {
+    flex-direction: column;
+    gap: 0.65rem;
+    margin-bottom: 2rem;
   }
   .hero-ctas .btn {
     width: 100%;
     justify-content: center;
+    padding: 0.8rem 1.25rem;
   }
   .hero-highlights {
-    grid-template-columns: 1fr;
-    gap: 1rem;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5rem;
+    padding: 1rem 0.5rem;
+    background: rgba(6, 14, 24, 0.55);
+    border-radius: var(--radius-md);
+    border: 1px solid rgba(197, 155, 39, 0.2);
     text-align: center;
   }
   .highlight-item {
     align-items: center;
   }
+  .highlight-num {
+    font-size: 1.4rem;
+  }
+  .highlight-label {
+    font-size: 0.72rem;
+    line-height: 1.25;
+  }
+  .hero-portal-card {
+    padding: 1.25rem 1rem;
+    border-radius: var(--radius-lg);
+  }
+  .portal-tabs {
+    margin-bottom: 1.25rem;
+  }
+  .portal-tab-btn {
+    padding: 0.65rem 0.4rem;
+    font-size: 0.82rem;
+  }
+  .portal-pane-title {
+    font-size: 1.2rem;
+  }
+  .portal-pane-desc {
+    font-size: 0.82rem;
+  }
+  .portal-benefits-list {
+    gap: 0.55rem;
+    margin-bottom: 1.25rem;
+  }
+  .portal-benefit-item {
+    font-size: 0.82rem;
+  }
+  .portal-pane-ctas {
+    flex-direction: column;
+    gap: 0.65rem;
+  }
+  .portal-pane-ctas .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* Floating WhatsApp Widget */
+  .floating-whatsapp-widget {
+    bottom: 1rem;
+    right: 1rem;
+    z-index: 1050;
+  }
+  .whatsapp-trigger-btn {
+    width: 50px;
+    height: 50px;
+    box-shadow: 0 4px 16px rgba(37, 211, 102, 0.4);
+  }
+  .whatsapp-trigger-btn svg {
+    width: 26px;
+    height: 26px;
+  }
+  .whatsapp-chat-popup {
+    position: fixed;
+    bottom: 68px;
+    right: 1rem;
+    left: 1rem;
+    width: auto;
+    max-width: 350px;
+    margin-left: auto;
+  }
+
+  /* Marketplace Cards */
   .marketplace-split {
     grid-template-columns: 1fr;
+    gap: 1.5rem;
   }
+  .market-card-img-wrap {
+    height: 190px;
+  }
+  .market-card-body {
+    padding: 1.25rem 1rem;
+  }
+  .market-card-title {
+    font-size: 1.3rem;
+  }
+  .market-features-grid {
+    grid-template-columns: 1fr;
+    gap: 0.65rem;
+    margin-bottom: 1.25rem;
+  }
+  .market-card-footer {
+    flex-direction: column;
+    gap: 0.65rem;
+  }
+  .market-card-footer .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* Industries Grid */
   .industries-grid {
     grid-template-columns: 1fr;
+    gap: 1.25rem;
   }
+  .industry-card-img-box {
+    height: 160px;
+  }
+  .industry-card-body {
+    padding: 1.25rem 1rem;
+  }
+  .industry-card-title {
+    font-size: 1.15rem;
+  }
+  .industry-card-action {
+    flex-direction: column;
+    gap: 0.65rem;
+    align-items: stretch;
+  }
+  .industry-card-action .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* Trust Grid */
   .trust-grid {
     grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+  .trust-card {
+    padding: 1.25rem 1rem;
+  }
+
+  /* Cost Estimator Calculator */
+  .calculator-wrap {
+    padding: 1.25rem 1rem;
+    border-radius: var(--radius-lg);
+  }
+  .calc-title {
+    font-size: 1.3rem;
+  }
+  .calc-desc {
+    font-size: 0.85rem;
+    margin-bottom: 1.25rem;
   }
   .calc-grid {
     grid-template-columns: 1fr;
+    gap: 0.85rem;
   }
   .range-wrap {
     grid-column: span 1;
   }
+  .calc-result-box {
+    padding: 1.4rem 1rem;
+  }
+  .calc-estimate-price {
+    font-size: 1.95rem;
+  }
+  .calc-breakup-list {
+    padding: 0.75rem;
+    margin: 1rem 0;
+    gap: 0.45rem;
+  }
+  .calc-breakup-row {
+    font-size: 0.8rem;
+  }
+  .calc-whatsapp-btn {
+    width: 100%;
+  }
+
+  /* Guard Career Content */
+  .guard-career-wrap {
+    border-radius: var(--radius-lg);
+  }
+  .guard-career-content {
+    padding: 1.4rem 1rem;
+  }
+  .guard-career-title {
+    font-size: 1.35rem;
+  }
+  .guard-career-desc {
+    font-size: 0.88rem;
+  }
+  .guard-perks-list {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+    margin: 1.25rem 0 1.5rem;
+  }
+  .perk-box {
+    padding: 0.85rem;
+  }
+  .guard-career-ctas {
+    flex-direction: column;
+    gap: 0.65rem;
+  }
+  .guard-career-ctas .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* FAQ Accordion */
+  .faq-tab-nav {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+  }
+  .faq-tab-btn {
+    padding: 0.45rem 0.95rem;
+    font-size: 0.82rem;
+  }
+  .faq-question {
+    padding: 1rem;
+    font-size: 0.92rem;
+  }
+  .faq-answer {
+    padding: 0 1rem 1rem;
+    font-size: 0.86rem;
+  }
+
+  /* Forms & Inputs */
   .form-grid {
     grid-template-columns: 1fr;
+    gap: 0.85rem;
   }
   .form-full {
     grid-column: span 1;
   }
-  .guard-perks-list {
-    grid-template-columns: 1fr;
+  .form-input, .form-select, .form-textarea {
+    font-size: 0.9rem;
+    padding: 0.7rem 0.85rem;
   }
-  .calculator-wrap {
-    padding: 1.5rem;
+
+  /* Modals */
+  .modal-overlay {
+    padding: 0.75rem;
   }
-  .calc-estimate-price {
-    font-size: 2rem;
+  .modal-box {
+    padding: 1.4rem 1rem;
+    border-radius: var(--radius-lg);
+    max-height: 92vh;
+  }
+  .modal-header {
+    padding-right: 2.25rem;
+    margin-bottom: 1.15rem;
+  }
+  .modal-title {
+    font-size: 1.25rem;
+    line-height: 1.25;
+  }
+  .modal-subtitle {
+    font-size: 0.82rem;
+  }
+  .modal-close-btn {
+    top: 1rem;
+    right: 1rem;
+    width: 30px;
+    height: 30px;
+    font-size: 1rem;
+  }
+
+  /* Footer */
+  .footer {
+    padding: 3rem 0 1.5rem;
   }
   .footer-grid {
     grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .footer-col {
+    text-align: left;
   }
   .footer-bottom {
     flex-direction: column;
     text-align: center;
+    gap: 0.85rem;
+  }
+  .footer-bottom div:last-child {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 1rem;
   }
+  .footer-bottom div:last-child a {
+    margin-right: 0 !important;
+  }
+
+  /* Tables */
+  .table-responsive {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    border-radius: var(--radius-md);
+  }
+  .comparison-table {
+    min-width: 520px;
+  }
+  .comparison-table th, .comparison-table td {
+    padding: 0.75rem 0.85rem !important;
+    font-size: 0.82rem !important;
+  }
+
+  /* Global Section Sizing */
+  .section {
+    padding: 2.75rem 0;
+  }
+  .section-header {
+    margin-bottom: 2rem;
+  }
   .section-title {
-    font-size: 1.8rem;
+    font-size: 1.65rem;
+    line-height: 1.25;
+  }
+  .section-subtitle {
+    font-size: 0.9rem;
+  }
+  .section-tag {
+    font-size: 0.74rem;
+    padding: 0.28rem 0.75rem;
   }
   .cta-title {
-    font-size: 1.8rem;
+    font-size: 1.65rem;
   }
-  .section {
-    padding: 3.5rem 0;
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 1rem;
   }
-  .hero-section {
-    padding: 3rem 0 4rem;
+  .navbar {
+    padding: 0.85rem 0;
   }
-  .modal-box {
-    padding: 1.5rem;
+  .top-bar-item:first-child {
+    display: none;
   }
-  .guard-career-content {
-    padding: 1.5rem;
+  .brand-logo-img {
+    width: 38px;
+    height: 38px;
+  }
+  .brand-name {
+    font-size: 1.05rem;
+  }
+  .brand-tagline {
+    font-size: 0.58rem;
+    letter-spacing: 0.5px;
+  }
+  .hero-title {
+    font-size: 1.6rem !important;
+  }
+  .hero-subtitle {
+    font-size: 0.88rem;
+  }
+  .btn-lg {
+    padding: 0.72rem 1.15rem;
+    font-size: 0.9rem;
+  }
+  .section-title {
+    font-size: 1.45rem;
+  }
+  .hero-highlights {
+    padding: 0.85rem 0.35rem;
+  }
+  .highlight-num {
+    font-size: 1.25rem;
+  }
+  .highlight-label {
+    font-size: 0.68rem;
+  }
+  .calc-estimate-price {
+    font-size: 1.75rem;
+  }
+  .portal-tab-btn {
+    font-size: 0.78rem;
+    padding: 0.6rem 0.35rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .hero-title {
+    font-size: 1.45rem !important;
+  }
+  .highlight-num {
+    font-size: 1.15rem;
+  }
+  .highlight-label {
+    font-size: 0.64rem;
+  }
+  .portal-tab-btn {
+    font-size: 0.74rem;
+    padding: 0.55rem 0.25rem;
   }
 }
